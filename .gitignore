@@ -1,0 +1,18 @@
+# Mac System files
+.DS_Store
+
+# Windows System files
+Thumbs.db
+Desktop.ini
+
+# VS Code settings (Personal to your computer)
+.vscode/
+
+# Node modules (If you ever add Javascript libraries later)
+node_modules/
+package-lock.json
+
+# Netlify/Vercel build folders
+.netlify/
+.vercel/
+dist/
