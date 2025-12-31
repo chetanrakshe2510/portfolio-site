@@ -563,3 +563,35 @@ section {
         display: none;
     }
 }
+
+
+/* =========================================
+   SCROLL ANIMATIONS
+   ========================================= */
+
+/* The starting state: invisible and pushed down */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(50px); /* Slides up from 50px down */
+    transition: all 1s ease-out; /* Smooth 1-second float */
+}
+
+/* The ending state: visible and in place */
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Optional: Delays for grid items so they cascade one by one */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* Ensure users who prefer reduced motion don't get dizzy */
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
