@@ -35,8 +35,8 @@ body {
    ========================================= */
 .hero-section {
     position: relative;
-    /* IMPORTANT: Ensure 'background.jpg' is in your images folder */
-    background-image: url('images/background.jpg'); 
+    /* IMPORTANT: Ensure 'background.png' is in your images folder */
+    background-image: url('images/background.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
