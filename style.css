@@ -147,6 +147,24 @@ body {
     text-align: center;
 }
 
+/* =========================================
+   PARTICLES JS CONTAINER
+   ========================================= */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Sits above the overlay (z-index 1) */
+}
+
+/* Update your text container to sit ABOVE the particles */
+.relative-z {
+    position: relative;
+    z-index: 3; /* Increased from 2 to 3 to stay clickable */
+}
+
 /* Dark Overlay to make text readable */
 .hero-overlay {
     position: absolute;
