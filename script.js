@@ -182,7 +182,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // SKILLS RADAR CHART (Chart.js)
 // =========================================
 document.addEventListener('DOMContentLoaded', () => {
-    const ctx = document.getElementById('skillsChart');
+    const ctx = document.getElementById('skills-chart');
     if (ctx) {
         new Chart(ctx, {
             type: 'radar',
