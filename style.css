@@ -3,11 +3,12 @@
    ========================================= */
 :root {
     --bg-light: #ffffff;
-    --bg-grey: #f8f9fa;
-    --text-main: #111111;
+    --bg-grey: #F5F7FA;           /* Medical Grey */
+    --text-main: #0A192F;          /* Deep Navy */
     --text-muted: #555555;
-    --accent-color: #5E33BF; /* Gamma Purple */
-    --accent-light: rgba(94, 51, 191, 0.1);
+    --accent-color: #006064;       /* Deep Teal - Clinical */
+    --accent-bright: #00BCD4;      /* Electric Cyan - Hover states */
+    --accent-light: rgba(0, 96, 100, 0.1);
     --font-main: 'Inter', sans-serif;
 }
 
@@ -25,7 +26,7 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -39,8 +40,8 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95); /* High opacity for readability */
-    backdrop-filter: blur(10px); /* Glass effect */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
@@ -52,7 +53,6 @@ body {
     height: 70px;
 }
 
-/* Logo Styling */
 .nav-logo {
     font-size: 1.8rem;
     font-weight: 800;
@@ -61,7 +61,6 @@ body {
     letter-spacing: -1px;
 }
 
-/* Desktop Menu */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -77,10 +76,10 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
+    color: var(--accent-bright);
 }
 
-/* Hamburger Icon (Hidden on Desktop) */
+/* Hamburger Icon */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -95,10 +94,10 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-/* MOBILE RESPONSIVENESS */
+/* Mobile Navigation */
 @media (max-width: 768px) {
     .hamburger {
-        display: block; /* Show hamburger on mobile */
+        display: block;
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -114,7 +113,7 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px; /* Push below navbar */
+        top: 70px;
         flex-direction: column;
         background-color: white;
         width: 100%;
@@ -126,18 +125,15 @@ body {
     }
 
     .nav-menu.active {
-        left: 0; /* Slide in */
+        left: 0;
     }
 }
 
-
-
 /* =========================================
-   2. HERO SECTION (Dark + Background)
+   2. HERO SECTION
    ========================================= */
 .hero-section {
     position: relative;
-    /* IMPORTANT: Ensure 'background.png' is in your images folder */
     background-image: url('images/background.png'); 
     background-size: cover;
     background-position: center;
@@ -147,41 +143,30 @@ body {
     text-align: center;
 }
 
-/* =========================================
-   PARTICLES JS CONTAINER
-   ========================================= */
 #particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 2; /* Sits above the overlay (z-index 1) */
+    z-index: 2;
 }
 
-/* Update your text container to sit ABOVE the particles */
 .relative-z {
     position: relative;
-    z-index: 3; /* Increased from 2 to 3 to stay clickable */
+    z-index: 3;
 }
 
-/* Dark Overlay to make text readable */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 5, 30, 0.7); /* Dark blue/black tint */
+    background: linear-gradient(135deg, rgba(0, 96, 100, 0.85), rgba(10, 25, 47, 0.9));
     z-index: 1;
 }
 
-.relative-z {
-    position: relative;
-    z-index: 2; /* Puts content above the overlay */
-}
-
-/* Profile Image */
 .profile-img {
     width: 160px;
     height: 160px;
@@ -192,7 +177,6 @@ body {
     box-shadow: 0 0 30px rgba(0,0,0,0.4);
 }
 
-/* Typography */
 .hero-name {
     font-size: 3.5rem;
     font-weight: 800;
@@ -207,7 +191,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Skill Tags (Pills) */
 .hero-tags {
     display: flex;
     flex-wrap: wrap;
@@ -227,7 +210,6 @@ body {
     color: #fff;
 }
 
-/* Glass Buttons */
 .hero-links {
     display: flex;
     justify-content: center;
@@ -237,7 +219,7 @@ body {
 
 .glass-btn {
     background: white;
-    color: #111;
+    color: var(--text-main);
     padding: 12px 28px;
     border-radius: 8px;
     font-weight: 600;
@@ -249,10 +231,10 @@ body {
 }
 
 .glass-btn:hover {
-    background: var(--accent-color);
+    background: var(--accent-bright);
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(94, 51, 191, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 188, 212, 0.3);
 }
 
 /* =========================================
@@ -286,16 +268,15 @@ section {
 .text-center { text-align: center; }
 
 /* =========================================
-   4. SUMMARY SECTION (Fixed Layout)
+   4. ABOUT SECTION
    ========================================= */
 .grid-2-col {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Text gets more space */
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 60px;
-    align-items: center; /* Vertically centers the image */
+    align-items: center;
 }
 
-/* Feature List (Icons + Text) */
 .feature-list {
     display: flex;
     flex-direction: column;
@@ -340,7 +321,6 @@ section {
     color: var(--text-muted);
 }
 
-/* Summary Image Styling */
 .content-image {
     display: flex;
     justify-content: center;
@@ -361,62 +341,187 @@ section {
 }
 
 /* =========================================
-   5. PUBLICATIONS (Cards)
+   5. RESEARCH THEMES SECTION
    ========================================= */
-.cards-grid {
+.research-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-.card {
+.research-card {
     background: white;
     padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    position: relative;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e8e8e8;
     transition: all 0.3s ease;
-    border: 1px solid #eee;
+    text-align: center;
 }
 
-.card:hover {
+.research-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 96, 100, 0.15);
     border-color: var(--accent-color);
 }
 
-.card-number {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 3rem;
-    font-weight: 900;
-    color: #f0f0f0;
-    z-index: 0;
+.research-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px auto;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-bright));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
 }
 
-.card h3, .card p, .card a {
-    position: relative;
-    z-index: 1;
+.research-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
 }
 
-.card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: var(--text-muted);
+.research-card p {
     font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tech-pill {
+    background: var(--accent-light);
+    color: var(--accent-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile: Single column */
+@media (max-width: 768px) {
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   6. PUBLICATIONS SECTION
+   ========================================= */
+.pub-section {
+    margin-bottom: 50px;
+}
+
+.pub-section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Publication Card - Horizontal Layout */
+.pub-card {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e8e8e8;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.pub-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 96, 100, 0.1);
+    border-color: var(--accent-color);
+}
+
+.pub-image {
+    width: 280px;
+    min-width: 280px;
+    background: var(--bg-grey);
+}
+
+.pub-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 200px;
+}
+
+.pub-content {
+    flex: 1;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pub-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 15px;
 }
 
-.journal {
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
     font-weight: 700;
-    color: var(--accent-color) !important;
-    font-size: 0.85rem !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.badge-journal {
+    background: var(--accent-color);
+    color: white;
+}
+
+.badge-year {
+    background: var(--text-main);
+    color: white;
+}
+
+.badge-if {
+    background: var(--accent-bright);
+    color: white;
+}
+
+.pub-content h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.pub-authors {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.pub-abstract {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
 }
 
 .link-arrow {
@@ -425,18 +530,92 @@ section {
     font-weight: 600;
     text-decoration: none;
     font-size: 0.9rem;
-    margin-top: 10px;
+    margin-top: 15px;
+    transition: all 0.2s ease;
 }
 
 .link-arrow:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
+    color: var(--accent-bright);
+}
+
+.link-arrow i {
+    transition: transform 0.2s ease;
+}
+
+.link-arrow:hover i {
+    transform: translateX(5px);
+}
+
+/* Mobile: Stack vertically */
+@media (max-width: 768px) {
+    .pub-card {
+        flex-direction: column;
+    }
+
+    .pub-image {
+        width: 100%;
+        min-width: 100%;
+        height: 200px;
+    }
+
+    .pub-image img {
+        height: 200px;
+    }
+}
+
+/* Conference Proceedings - Compact List */
+.conf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.conf-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s ease;
+}
+
+.conf-item:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conf-date {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-bright));
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 70px;
+}
+
+.conf-year {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.conf-details h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.conf-venue {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 /* =========================================
-   6. EXPERIENCE & EDUCATION
+   7. EXPERIENCE & EDUCATION
    ========================================= */
-/* Experience Timeline */
 .timeline-box {
     max-width: 750px;
     margin: 0 auto;
@@ -473,7 +652,6 @@ section {
 .timeline-content h4 { font-size: 1rem; font-weight: 400; color: #666; margin-bottom: 10px; }
 .timeline-content ul { padding-left: 20px; color: var(--text-muted); font-size: 0.95rem; }
 
-/* Education Grid */
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -496,20 +674,20 @@ section {
 
 .edu-card .year {
     display: inline-block;
-    background: #f0f0f0;
+    background: var(--accent-light);
+    color: var(--accent-color);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #555;
 }
 
 /* =========================================
-   7. FOOTER
+   8. FOOTER
    ========================================= */
 .section-dark-footer {
-    background: #111;
+    background: linear-gradient(135deg, var(--text-main), #1a2744);
     color: white;
     padding: 80px 0 40px 0;
     text-align: center;
@@ -539,23 +717,22 @@ section {
 }
 
 .footer-socials a:hover {
-    color: var(--accent-color);
+    color: var(--accent-bright);
     transform: scale(1.1);
 }
 
 .copyright {
-    color: #555;
+    color: #888;
     font-size: 0.8rem;
     margin-top: 40px;
-    border-top: 1px solid #333;
+    border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 20px;
 }
 
 /* =========================================
-   8. MOBILE RESPONSIVENESS
+   9. MOBILE RESPONSIVENESS
    ========================================= */
 @media (max-width: 900px) {
-    /* Stack the Summary Grid */
     .grid-2-col {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -563,11 +740,10 @@ section {
     }
 
     .feature-item {
-        text-align: left; /* Keep list items left aligned for readability */
-        justify-content: center; /* But center the block visually */
+        text-align: left;
+        justify-content: center;
     }
 
-    /* Adjust Hero Text Size */
     .hero-name {
         font-size: 2.5rem;
     }
@@ -576,38 +752,31 @@ section {
         padding: 100px 0 60px 0;
     }
 
-    /* Hide large card numbers on mobile */
     .card-number {
         display: none;
     }
 }
 
-
 /* =========================================
-   SCROLL ANIMATIONS
+   10. SCROLL ANIMATIONS
    ========================================= */
-
-/* The starting state: invisible and pushed down */
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transform: translateY(50px); /* Slides up from 50px down */
-    transition: all 1s ease-out; /* Smooth 1-second float */
+    transform: translateY(50px);
+    transition: all 1s ease-out;
 }
 
-/* The ending state: visible and in place */
 .show {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
 }
 
-/* Optional: Delays for grid items so they cascade one by one */
 .delay-100 { transition-delay: 100ms; }
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 
-/* Ensure users who prefer reduced motion don't get dizzy */
 @media(prefers-reduced-motion) {
     .hidden {
         transition: none;
