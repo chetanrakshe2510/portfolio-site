@@ -465,18 +465,25 @@ section {
 }
 
 .pub-image {
-    width: 280px;
-    min-width: 280px;
-    height: 220px;
-    background: var(--bg-grey);
-    overflow: hidden;
+    width: 320px;
+    min-width: 320px;
+    background: white;
+    border-right: 1px solid #eee;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pub-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top center;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.pub-card:hover .pub-image img {
+    transform: scale(1.02);
 }
 
 .pub-content {
@@ -570,11 +577,14 @@ section {
     .pub-image {
         width: 100%;
         min-width: 100%;
-        height: 200px;
+        height: 250px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
     }
 
     .pub-image img {
-        height: 200px;
+        height: 100%;
+        /* Ensure image stays within container */
     }
 }
 
