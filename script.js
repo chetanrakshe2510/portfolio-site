@@ -177,3 +177,65 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// =========================================
+// SKILLS RADAR CHART (Chart.js)
+// =========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const ctx = document.getElementById('skillsChart');
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Deep Learning', 'Signal Processing', 'Exp. Design', 'Statistical Analysis', 'Software Eng.'],
+                datasets: [{
+                    label: 'Technical Proficiency',
+                    data: [90, 95, 85, 80, 75],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 188, 212, 0.2)', // Cyan transparent
+                    borderColor: '#006064', // Deep Teal
+                    pointBackgroundColor: '#006064',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#006064'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 14,
+                                family: "'Playfair Display', serif"
+                            },
+                            color: '#0A192F'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    }
+});

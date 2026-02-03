@@ -35,6 +35,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
 
 <body>
@@ -142,7 +143,9 @@
             </div>
 
             <div class="content-image">
-                <img src="images/summary.webp" alt="Neuroscience and AI" class="rounded-img" loading="lazy">
+                <div class="chart-container" style="position: relative; height:450px; width:100%;">
+                    <canvas id="skillsChart"></canvas>
+                </div>
             </div>
 
         </div>
