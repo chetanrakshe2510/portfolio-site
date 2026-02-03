@@ -1,3 +1,6 @@
+// =========================================
+// NAVIGATION - Hamburger Menu Toggle
+// =========================================
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
@@ -6,40 +9,57 @@ hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
 });
 
-
-// Create the Intersection Observer
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        // If the element is visible in the viewport
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        } 
-        // Optional: Else remove the class to re-animate when scrolling up?
-        // usually better to leave it once shown:
-        // else { entry.target.classList.remove('show'); }
+// Close menu when a nav link is clicked (mobile UX)
+document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
     });
 });
 
-// Find all elements with the class 'hidden' and tell the observer to watch them
+// =========================================
+// SCROLL ANIMATIONS - Intersection Observer
+// =========================================
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+// Target all elements with 'hidden' class including new section elements
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
-/* =========================================
-   PARTICLES.JS CONFIGURATION (NEURAL NETWORK)
-   ========================================= */
-// Only load if the div exists to avoid errors on other pages
+// =========================================
+// PARTICLES.JS CONFIGURATION
+// =========================================
+// Responsive particle count for performance optimization
+const getParticleCount = () => {
+    if (window.innerWidth < 768) {
+        return 30;  // Mobile: fewer particles
+    } else if (window.innerWidth < 1200) {
+        return 50;  // Tablet: moderate
+    }
+    return 80;      // Desktop: full effect
+};
+
 if (document.getElementById('particles-js')) {
     particlesJS("particles-js", {
         "particles": {
             "number": {
-                "value": 80, // Number of nodes
+                "value": getParticleCount(),
                 "density": {
                     "enable": true,
                     "value_area": 800
                 }
             },
             "color": {
-                "value": "#ffffff" // Node color
+                "value": "#ffffff"
             },
             "shape": {
                 "type": "circle",
@@ -71,7 +91,7 @@ if (document.getElementById('particles-js')) {
             },
             "move": {
                 "enable": true,
-                "speed": 2, // Speed of the floating neurons
+                "speed": 2,
                 "direction": "none",
                 "random": false,
                 "straight": false,
@@ -89,11 +109,11 @@ if (document.getElementById('particles-js')) {
             "events": {
                 "onhover": {
                     "enable": true,
-                    "mode": "grab" // The "Synapse" effect: connects to mouse
+                    "mode": "grab"
                 },
                 "onclick": {
                     "enable": true,
-                    "mode": "push" // Adds particles on click
+                    "mode": "push"
                 },
                 "resize": true
             },
@@ -126,3 +146,22 @@ if (document.getElementById('particles-js')) {
         "retina_detect": true
     });
 }
+
+// =========================================
+// SMOOTH SCROLL for Navigation Links
+// =========================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    });
+});
