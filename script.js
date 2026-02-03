@@ -18,6 +18,18 @@ document.querySelectorAll(".nav-link").forEach(link => {
 });
 
 // =========================================
+// SCROLL PROGRESS BAR
+// =========================================
+window.addEventListener('scroll', () => {
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+        progressBar.style.width = `${progress}%`;
+    }
+});
+
+// =========================================
 // SCROLL ANIMATIONS - Intersection Observer
 // =========================================
 const observer = new IntersectionObserver((entries) => {
