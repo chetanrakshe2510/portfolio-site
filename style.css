@@ -115,7 +115,7 @@ body {
 }
 
 /* Mobile Navigation */
-@media (width <= 768px) {
+@media (width <=768px) {
     .hamburger {
         display: block;
     }
@@ -442,7 +442,7 @@ section {
 }
 
 /* Mobile: Single column */
-@media (width <= 768px) {
+@media (width <=768px) {
     .research-grid {
         grid-template-columns: 1fr;
     }
@@ -610,7 +610,7 @@ section {
 }
 
 /* Mobile: Stack vertically */
-@media (width <= 768px) {
+@media (width <=768px) {
     .pub-card {
         flex-direction: column;
     }
@@ -886,7 +886,7 @@ section {
 /* =========================================
    9. MOBILE RESPONSIVENESS
    ========================================= */
-@media (width <= 900px) {
+@media (width <=900px) {
     .grid-2-col {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -919,6 +919,16 @@ section {
     filter: blur(5px);
     transform: translateY(50px);
     transition: all 1s ease-out;
+    will-change: opacity, transform;
+}
+
+@media (max-width: 768px) {
+    .hidden {
+        filter: none;
+        /* Disable blur on mobile for performance */
+        transform: translateY(30px);
+        /* Reduce movement on mobile */
+    }
 }
 
 .show {

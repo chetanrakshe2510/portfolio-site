@@ -20,12 +20,21 @@ document.querySelectorAll(".nav-link").forEach(link => {
 // =========================================
 // SCROLL PROGRESS BAR
 // =========================================
+// Optimized Scroll Progress using requestAnimationFrame to prevent jank
+const progressBar = document.getElementById('scroll-progress');
+let ticking = false;
+
 window.addEventListener('scroll', () => {
-    const totalHeight = document.body.scrollHeight - window.innerHeight;
-    const progress = (window.scrollY / totalHeight) * 100;
-    const progressBar = document.getElementById('scroll-progress');
-    if (progressBar) {
-        progressBar.style.width = `${progress}%`;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (window.scrollY / totalHeight) * 100;
+            if (progressBar) {
+                progressBar.style.width = `${progress}%`;
+            }
+            ticking = false;
+        });
+        ticking = true;
     }
 });
 
@@ -53,11 +62,11 @@ hiddenElements.forEach((el) => observer.observe(el));
 // Responsive particle count for performance optimization
 const getParticleCount = () => {
     if (window.innerWidth < 768) {
-        return 30;  // Mobile: fewer particles
+        return 20;  // Mobile: fewer particles (Performance Optimized)
     } else if (window.innerWidth < 1200) {
-        return 50;  // Tablet: moderate
+        return 40;  // Tablet: moderate
     }
-    return 80;      // Desktop: full effect
+    return 60;      // Desktop: balanced effect
 };
 
 if (document.getElementById('particles-js')) {
