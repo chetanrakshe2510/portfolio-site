@@ -26,12 +26,18 @@
     --font-mono: 'JetBrains Mono', monospace;
     --font-body: 'Inter', sans-serif;
 
-    /* Legacy compatibility */
+    /* Legacy compatibility - Mapping Light to Dark */
     --bg-light: #0A192F;
+    /* Was White -> Now Deep Navy (Main Background) */
     --bg-grey: #112240;
+    /* Was Grey -> Now Light Navy (Secondary Sections) */
     --text-main: #E6F1FF;
+    /* Was Black -> Now Off-White */
     --accent-color: #64FFDA;
+    /* Was Purple -> Now Electric Cyan */
     --accent-bright: #64FFDA;
+    --accent-light: rgba(100, 255, 218, 0.1);
+    /* Cyan Tint */
     --font-main: 'Inter', sans-serif;
     --font-serif: 'Space Grotesk', sans-serif;
 }
@@ -64,9 +70,22 @@
 
 body {
     font-family: var(--font-body);
-    color: var(--text-light);
+    color: var(--text-main);
     line-height: 1.6;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-main);
+}
+
+p {
+    color: var(--text-muted);
 }
 
 .container {
