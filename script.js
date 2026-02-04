@@ -18,6 +18,89 @@ document.querySelectorAll(".nav-link").forEach(link => {
 });
 
 // =========================================
+// HACK TEXT EFFECT (Decryption Animation)
+// =========================================
+class HackTextEffect {
+    constructor(element) {
+        this.element = element;
+        this.originalText = element.innerText;
+        this.element.dataset.value = this.originalText;
+        this.chars = "!@#$%^&*()_+-=[]{}|;':\",./<>?0123456789";
+        this.isAnimating = false;
+
+        this.element.addEventListener('mouseenter', () => this.scramble());
+    }
+
+    scramble() {
+        if (this.isAnimating) return;
+        this.isAnimating = true;
+
+        let iteration = 0;
+        const originalText = this.element.dataset.value;
+
+        const interval = setInterval(() => {
+            this.element.innerText = originalText
+                .split("")
+                .map((char, index) => {
+                    if (index < iteration) {
+                        return originalText[index];
+                    }
+                    if (char === " ") return " ";
+                    return this.chars[Math.floor(Math.random() * this.chars.length)];
+                })
+                .join("");
+
+            if (iteration >= originalText.length) {
+                clearInterval(interval);
+                this.element.innerText = originalText;
+                this.isAnimating = false;
+            }
+
+            iteration += 1 / 3; // Speed of reveal
+        }, 30);
+    }
+}
+
+// Apply HackTextEffect to headings
+document.addEventListener('DOMContentLoaded', () => {
+    const heroName = document.querySelector('.hero-name');
+    if (heroName) new HackTextEffect(heroName);
+
+    document.querySelectorAll('.section-title').forEach(title => {
+        new HackTextEffect(title);
+    });
+});
+
+// =========================================
+// MAGNETIC CURSOR EFFECT
+// =========================================
+function initMagneticCursor() {
+    const magneticElements = document.querySelectorAll('.glass-btn, .nav-link');
+    const maxPull = 10; // Maximum pixels to pull
+
+    magneticElements.forEach(el => {
+        el.style.transition = 'transform 0.2s ease-out';
+
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const deltaX = (e.clientX - centerX) / rect.width * maxPull;
+            const deltaY = (e.clientY - centerY) / rect.height * maxPull;
+
+            el.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = 'translate(0, 0)';
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initMagneticCursor);
+
+// =========================================
 // SCROLL PROGRESS BAR
 // =========================================
 // Optimized Scroll Progress using requestAnimationFrame to prevent jank
