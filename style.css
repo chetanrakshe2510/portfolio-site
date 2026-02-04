@@ -1160,3 +1160,70 @@ section {
         transition: none;
     }
 }
+
+/* =========================================
+   CRITICAL OVERRIDES (THEME ENFORCER)
+   Add this to the very bottom of style.css
+   ========================================= */
+
+/* 1. Force Backgrounds to Dark Navy */
+body,
+.section-light,
+.section-grey,
+#about,
+#experience,
+#contact {
+    background-color: var(--bg-dark) !important;
+    background-image: none !important;
+    color: var(--text-light) !important;
+}
+
+/* 2. Force Cards to Glass (Fixes the "White Block" issue) */
+.card,
+.project-card,
+.edu-card,
+.timeline-content,
+.pub-card,
+.conf-item,
+.cert-item {
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--card-border) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 3. Force Text Colors (Fixes "Invisible Text") */
+h1,
+h2,
+h3,
+h4,
+h5,
+strong,
+b {
+    color: var(--text-light) !important;
+}
+
+p,
+li,
+span,
+div {
+    color: var(--text-muted);
+}
+
+/* 4. Fix Timeline Specifics */
+.timeline-item::after {
+    background: var(--accent-cyan) !important;
+    /* The dot on the timeline */
+}
+
+/* 5. Fix Navbar Visibility */
+.navbar {
+    background: rgba(10, 25, 47, 0.85) !important;
+    /* Dark Glass Header */
+    backdrop-filter: blur(10px);
+}
+
+.nav-link {
+    color: var(--text-light) !important;
+}
