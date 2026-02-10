@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Chetan Rakshe | PhD Researcher & Neuro-AI Engineer</title>
     <meta name="title" content="Chetan Rakshe | PhD Researcher & Neuro-AI Engineer">
-    <meta name="description" content="Portfolio of Chetan Rakshe, a PhD Researcher at IIT (BHU) specializing in Computational Neuroscience, EEG Foundation Models, and Deep Learning.">
-    <meta name="keywords" content="Chetan Rakshe, Computational Neuroscience, Neuro-AI, EEG, Deep Learning, IIT BHU, PhD Researcher">
+    <meta name="description"
+        content="Portfolio of Chetan Rakshe, a PhD Researcher at IIT (BHU) specializing in Computational Neuroscience, EEG Foundation Models, and Deep Learning.">
+    <meta name="keywords"
+        content="EEG Biometrics, Fractal Functional Connectivity, Neuro-AI, IIT BHU, Deep Learning, Mamba Architecture, Computational Neuroscience, Chetan Rakshe">
     <meta name="author" content="Chetan Rakshe">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chetanrakshe.netlify.app/">
     <meta property="og:title" content="Chetan Rakshe | PhD Researcher & Neuro-AI Engineer">
-    <meta property="og:description" content="Exploring the intersection of Neuroscience and AI. View my research, publications, and technical projects.">
+    <meta property="og:description"
+        content="Exploring the intersection of Neuroscience and AI. View my research, publications, and technical projects.">
     <meta property="og:image" content="https://chetanrakshe.netlify.app/images/Social_Banner_new.png">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://chetanrakshe.netlify.app/">
     <meta property="twitter:title" content="Chetan Rakshe | PhD Researcher & Neuro-AI Engineer">
-    <meta property="twitter:description" content="Exploring the intersection of Neuroscience and AI. View my research, publications, and technical projects.">
+    <meta property="twitter:description"
+        content="Exploring the intersection of Neuroscience and AI. View my research, publications, and technical projects.">
     <meta property="twitter:image" content="https://chetanrakshe.netlify.app/images/Social_Banner_new.png">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
 
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
-<body>
 
+<body>
+    <div id="scroll-progress"></div>
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="nav-logo">CR.</a>
-            
+
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
                 <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
                 <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
@@ -49,18 +61,20 @@
             </div>
         </div>
     </nav>
+
     <header class="hero-section">
         <div class="hero-overlay"></div>
         <div id="particles-js"></div>
+        <div id="brain-canvas"></div>
         <div class="container relative-z">
-            
+
             <div class="profile-wrapper">
-                <img src="images/profile.jpg" alt="Chetan Rakshe" class="profile-img">
+                <img src="images/profile.webp" alt="Chetan Rakshe" class="profile-img">
             </div>
-            
+
             <h1 class="hero-name">Chetan Rakshe</h1>
             <h2 class="hero-role">PhD Researcher @ IIT (BHU)</h2>
-            
+
             <div class="hero-tags">
                 <span class="tag">Computational Neuroscience</span>
                 <span class="tag">Neuro-AI & EEG Foundation Models</span>
@@ -70,50 +84,60 @@
             </div>
 
             <div class="hero-links">
-                <a href="https://linkedin.com/in/chetan-rakshe-019015191" target="_blank" class="btn glass-btn">
+                <a href="https://linkedin.com/in/chetan-rakshe-019015191" target="_blank" class="btn glass-btn"
+                    aria-label="LinkedIn Profile">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://scholar.google.com/citations?hl=en&user=l9AtuKEAAAAJ" target="_blank" class="btn glass-btn">
+                <a href="https://scholar.google.com/citations?hl=en&user=l9AtuKEAAAAJ" target="_blank"
+                    class="btn glass-btn" aria-label="Google Scholar Profile">
                     <i class="fas fa-graduation-cap"></i> Google Scholar
                 </a>
-                <a href="https://github.com/chetanrakshe2510" target="_blank" class="btn glass-btn">
+                <a href="https://github.com/chetanrakshe2510" target="_blank" class="btn glass-btn"
+                    aria-label="GitHub Profile">
                     <i class="fab fa-github"></i> Github
+                </a>
+                <a href="https://github.com/chetanrakshe2510?tab=repositories" target="_blank" class="btn glass-btn"
+                    aria-label="View Code Projects">
+                    <i class="fas fa-code"></i> View Code Projects
                 </a>
             </div>
         </div>
     </header>
 
+    <!-- ABOUT SECTION - Updated Title & Content -->
     <section class="section-light" id="about">
         <div class="container grid-2-col">
-            
+
             <div class="content-text">
                 <h5 class="section-subtitle">ABOUT ME</h5>
-                <h2 class="section-title hidden">Bridging Neuroscience & AI</h2>
+                <h2 class="section-title hidden">Decoding Neural Dynamics</h2>
 
-                
                 <div class="feature-list">
-                    
+
                     <div class="feature-item hidden">
-                        <div class="icon-box"><i class="fas fa-brain"></i></div>
+                        <div class="icon-box"><i class="fas fa-wave-square"></i></div>
                         <div class="text-box">
-                            <h3>Computational Neuroscience PhD</h3>
-                            <p>Focused on applying interdisciplinary skills to solve complex brain functionality problems.</p>
+                            <h3>Signal Processing Expert</h3>
+                            <p>Specialized in EEG/fMRI signal analysis, time-frequency decomposition, and advanced
+                                preprocessing pipelines for neuroimaging data.</p>
                         </div>
                     </div>
 
                     <div class="feature-item hidden delay-100">
-                        <div class="icon-box"><i class="fas fa-microchip"></i></div>
+                        <div class="icon-box"><i class="fas fa-network-wired"></i></div>
                         <div class="text-box">
-                            <h3>Tech & ML Stack</h3>
-                            <p>Proficient in Python, Deep Learning, MATLAB, Fusion 360, and advanced data modeling.</p>
+                            <h3>AI Architecture</h3>
+                            <p>Building deep learning models including Transformers, Mamba state-space models, and CNNs
+                                for neural signal classification and prediction.</p>
                         </div>
                     </div>
 
                     <div class="feature-item hidden delay-200">
-                        <div class="icon-box"><i class="fas fa-heartbeat"></i></div>
+                        <div class="icon-box"><i class="fas fa-stethoscope"></i></div>
                         <div class="text-box">
-                            <h3>Healthcare Impact</h3>
-                            <p>Driven to improve human health and performance through AI-driven diagnostic tools.</p>
+                            <h3>Clinical Translation</h3>
+                            <p>Developing diagnostic biomarkers for neurological conditions like ASD, translating
+                                research findings into clinically actionable tools.</p>
                         </div>
                     </div>
 
@@ -121,36 +145,263 @@
             </div>
 
             <div class="content-image">
-                <img src="images/summary.png" alt="Neuroscience and AI" class="rounded-img"> 
+                <div class="chart-container" style="position: relative; height:450px; width:100%;">
+                    <canvas id="skills-chart"></canvas>
+                </div>
             </div>
-            
+
         </div>
     </section>
 
-    <section class="section-grey" id="publications">
+    <!-- RESEARCH THEMES SECTION - New -->
+    <section class="section-grey" id="research">
         <div class="container">
-            <h2 class="section-title text-center hidden">Top Publications</h2>
-            <div class="cards-grid">
-                <div class="card hidden">
-                    <span class="card-number">01</span>
-                    <h3>Fine-Tuning EEG Channel Utilization</h3>
-                    <p class="journal">IEEE Access, vol. 13, 2025</p>
-                    <p>Focused on emotionally stimulated biometric authentication.</p>
-                    <a href="https://ieeexplore.ieee.org/document/10876141" class="link-arrow">Read Paper <i class="fas fa-arrow-right"></i></a>
+            <h2 class="section-title text-center hidden">Research Themes</h2>
+            <div class="research-grid">
+
+                <!-- Card 1: Neuro-Cognitive Security -->
+                <div class="research-card hidden">
+                    <div class="research-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Neuro-Cognitive Security</h3>
+                    <p>EEG-based biometric authentication using emotional stimuli. Developing robust identity
+                        verification systems leveraging unique brainwave patterns during affective states.</p>
+                    <div class="pipeline-flow">
+                        <span class="pipeline-step">Raw EEG</span>
+                        <i class="fas fa-long-arrow-alt-right pipeline-arrow"></i>
+                        <span class="pipeline-step">Artifact Removal</span>
+                        <i class="fas fa-long-arrow-alt-right pipeline-arrow"></i>
+                        <span class="pipeline-step">Power Spectrum</span>
+                        <i class="fas fa-long-arrow-alt-right pipeline-arrow"></i>
+                        <span class="pipeline-step">Authentication</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">MNE-Python</span>
+                        <span class="tech-pill">PyTorch</span>
+                        <span class="tech-pill">scikit-learn</span>
+                        <span class="tech-pill">EEGNet</span>
+                    </div>
                 </div>
-                <div class="card hidden delay-200">
-                    <span class="card-number">02</span>
-                    <h3>Autism Spectrum Diagnosis</h3>
-                    <p class="journal">Neural Comput & Applic (2024)</p>
-                    <p>Using fractal and non-fractal-based functional connectivity analysis and ML methods.</p>
-                    <a href="https://doi.org/10.1007/s00521-024-09770-3" class="link-arrow">Read Paper <i class="fas fa-arrow-right"></i></a>
+
+                <!-- Card 2: Fractal Neuro-Diagnostics -->
+                <div class="research-card hidden delay-100">
+                    <div class="research-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Fractal Neuro-Diagnostics</h3>
+                    <p>Fractal functional connectivity analysis for Autism Spectrum Disorder diagnosis. Identifying
+                        neural complexity biomarkers through Hurst exponent and detrended fluctuation analysis.</p>
+                    <div class="pipeline-flow">
+                        <span class="pipeline-step">fMRI Time Series</span>
+                        <i class="fas fa-long-arrow-alt-right pipeline-arrow"></i>
+                        <span class="pipeline-step">Fractal Analysis</span>
+                        <i class="fas fa-long-arrow-alt-right pipeline-arrow"></i>
+                        <span class="pipeline-step">Hurst Exponent</span>
+                        <i class="fas fa-long-arrow-alt-right pipeline-arrow"></i>
+                        <span class="pipeline-step">Diagnosis</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-pill">MATLAB</span>
+                        <span class="tech-pill">fMRI</span>
+                        <span class="tech-pill">CONN Toolbox</span>
+                        <span class="tech-pill">DFA</span>
+                        <span class="tech-pill">Graph Theory</span>
+                    </div>
                 </div>
-                <div class="card hidden delay-300">
-                    <span class="card-number">03</span>
-                    <h3>ML in Neuroscience</h3>
-                    <p class="journal">Research Contribution</p>
-                    <p>Explored new approaches to data analysis to understand brain function in autism.</p>
-                    <a href=" https://doi.org/10.1007/s13369-023-08560-8" class="link-arrow">Read Paper <i class="fas fa-arrow-right"></i></a>
+
+                <!-- Card 3: Multimodal Neuro-AI -->
+                <div class="research-card hidden delay-200">
+                    <div class="research-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Multimodal Neuro-AI</h3>
+                    <p>Deep learning architectures for neuroimaging classification. Leveraging Mamba state-space models
+                        and Transformers for age/severity-specific ASD classification.</p>
+                    <div class="pipeline-flow">
+                        <span class="pipeline-step">Multimodal Data</span>
+                        <i class="fas fa-long-arrow-alt-right pipeline-arrow"></i>
+                        <span class="pipeline-step">Mamba Block</span>
+                        <i class="fas fa-long-arrow-alt-right pipeline-arrow"></i>
+                        <span class="pipeline-step">Feature Fusion</span>
+                        <i class="fas fa-long-arrow-alt-right pipeline-arrow"></i>
+                        <span class="pipeline-step">Classification</span>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-pill">PyTorch</span>
+                        <span class="tech-pill">Mamba</span>
+                        <span class="tech-pill">Transformers</span>
+                        <span class="tech-pill">DTI</span>
+                        <span class="tech-pill">Deep Learning</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS SECTION - Visual Archive -->
+    <section class="section-light" id="publications">
+        <div class="container">
+            <h2 class="section-title text-center hidden">Publications</h2>
+
+            <!-- Journal Articles - Horizontal Cards -->
+            <div class="pub-section">
+                <h3 class="pub-section-title hidden">Selected Journal Articles</h3>
+
+                <div class="pub-card hidden">
+                    <div class="pub-image">
+                        <img src="images/paper-eeg-auth.webp" alt="EEG Authentication Paper Figure"
+                            onerror="this.src='images/summary.webp'; this.alt='Publication thumbnail';" loading="lazy">
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-badges">
+                            <span class="badge badge-journal">IEEE Access</span>
+                            <span class="badge badge-year">2025</span>
+                            <span class="badge badge-if">IF: 3.4</span>
+                        </div>
+                        <h4>Fine-Tuning EEG Channel Utilization for Emotionally Stimulated Biometric Authentication</h4>
+                        <p class="pub-authors">Chetan Rakshe, Christy Bobby Thomas, Mohanavelu Kalathe, Vanteemar S.
+                            Sreeraj,
+                            Ganesan Venkatasubramanian, Deepesh Kumar, Jac Fredo
+                            Agastinose Ronickom</p>
+                        <p class="pub-abstract">This study introduces a novel framework for EEG-based biometric
+                            authentication that addresses the challenge of inter-session noise (variability in brain
+                            signals over time). By utilizing "emotional logic" paradigms (specifically "disgust" and
+                            "grief" stimuli) and a specific channel selection strategy (Frontal-Parietal-Occipital), the
+                            system achieved a high authentication accuracy of 98.42% using a KNN classifier,
+                            significantly outperforming neutral-state baselines.</p>
+                        <a href="https://doi.org/10.1109/ACCESS.2025.3539502" target="_blank" class="link-arrow">Read
+                            Paper <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="pub-card hidden delay-100">
+                    <div class="pub-image">
+                        <img src="images/paper-asd-fractal.webp" alt="ASD Fractal Analysis Paper Figure"
+                            onerror="this.src='images/summary.webp'; this.alt='Publication thumbnail';" loading="lazy">
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-badges">
+                            <span class="badge badge-journal">Neural Computing & Applications</span>
+                            <span class="badge badge-year">2024</span>
+                            <span class="badge badge-if">IF: 6.0</span>
+                        </div>
+                        <h4>Autism spectrum disorder diagnosis using fractal and non-fractal-based functional
+                            connectivity analysis and machine learning methods</h4>
+                        <p class="pub-authors">Chetan Rakshe, Suja Kunneth, Soumya Sundaram, Murugappan Murugappan, Jac
+                            Fredo Agastinose Ronickom</p>
+                        <p class="pub-abstract">This research develops a diagnostic pipeline for Autism Spectrum
+                            Disorder (ASD) by analyzing the "fractal nature" of brain connectivity. The study compared
+                            fractal functional connectivity (FFC) against traditional Pearson correlation (FC), finding
+                            that FFC provides a more robust biomarker. Using a Logistic Regression classifier on the
+                            ABIDE-I dataset, the model achieved a classification accuracy of 78.4% by focusing on the
+                            Default Mode Network (DMN) and limbic systems.</p>
+                        <a href="https://doi.org/10.1007/s00521-024-09770-3" target="_blank" class="link-arrow">Read
+                            Paper <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="pub-card hidden delay-200">
+                    <div class="pub-image">
+                        <img src="images/paper-conf-asd.webp" alt="Age-Specific ASD Classification Paper Figure"
+                            onerror="this.src='images/summary.webp'; this.alt='Publication thumbnail';" loading="lazy">
+                    </div>
+                    <div class="pub-content">
+                        <div class="pub-badges">
+                            <span class="badge badge-journal">Arabian Journal for Science and Engineering</span>
+                            <span class="badge badge-year">2024</span>
+                            <span class="badge badge-if">IF: 2.9</span>
+                        </div>
+                        <h4>Age- and Severity-Specific Deep Learning Models for Autism Spectrum Disorder Classification
+                            Using Functional Connectivity Measures</h4>
+                        <p class="pub-authors">Vaibhav Jain, Chetan T. Rakshe, Sandeep Singh Sengar, M. Murugappan, Jac
+                            Fredo Agastinose Ronickom</p>
+                        <p class="pub-abstract">This paper investigates how age and symptom severity impact the accuracy
+                            of AI models in diagnosing ASD. The team developed a Deep Neural Network (DNN) that utilizes
+                            functional connectivity features from fMRI data. The study found that age-specific models
+                            (particularly for adolescents) significantly outperform "mixed-age" models, achieving up to
+                            88.6% accuracy, demonstrating that personalized AI models are essential for heterogeneous
+                            disorders like autism.</p>
+                        <a href="https://doi.org/10.1007/s13369-023-08560-8" target="_blank" class="link-arrow">Read
+                            Paper <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conference Proceedings - Compact List -->
+            <div class="pub-section">
+                <h3 class="pub-section-title hidden">Conference Proceedings</h3>
+
+                <div class="conf-list">
+                    <div class="conf-item hidden">
+                        <div class="conf-date">
+                            <span class="conf-year">2024</span>
+                        </div>
+                        <div class="conf-details">
+                            <h4>Advancing ASD Diagnostic Classification with Features of Continuous Wavelet Transform of
+                                fMRI and Machine Learning Algorithms</h4>
+                            <p class="conf-venue">International Conference on Signal Processing and Communications
+                                (SPCOM)</p>
+                        </div>
+                    </div>
+
+                    <div class="conf-item hidden delay-100">
+                        <div class="conf-date">
+                            <span class="conf-year">2023</span>
+                        </div>
+                        <div class="conf-details">
+                            <h4>Diagnostic Classification of ASD Using Fractal Functional Connectivity of fMRI and
+                                Logistic Regression</h4>
+                            <p class="conf-venue">IEEE International Conference on Biomedical Engineering</p>
+                        </div>
+                    </div>
+
+                    <div class="conf-item hidden delay-200">
+                        <div class="conf-date">
+                            <span class="conf-year">2023</span>
+                        </div>
+                        <div class="conf-details">
+                            <h4>Diagnostic Classification of ASD Improves with Structural Connectivity of DTI and
+                                Logistic Regression</h4>
+                            <p class="conf-venue">IEEE International Symposium on Medical Measurements and Applications
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW ACADEMIC LEADERSHIP SECTION -->
+    <section class="section-grey" id="leadership">
+        <div class="container">
+            <h2 class="section-title text-center hidden">Academic Leadership</h2>
+            <div class="leadership-grid">
+                <!-- Mentorship -->
+                <div class="leadership-card hidden">
+                    <div class="lead-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Capstone Mentorship</h3>
+                    <p>Guided undergraduate teams in developing end-to-end neuro-engineering systems,
+                        including an EEG-based emotion recognition system and a real-time drowsiness detector. Foster
+                        technical growth and project management skills.</p>
+                </div>
+                <!-- Grant Writing -->
+                <div class="leadership-card hidden delay-100">
+                    <div class="lead-icon"><i class="fas fa-file-signature"></i></div>
+                    <h3>Strategic Grant Writing</h3>
+                    <p>Co-authored technical methodologies for high-impact research proposals submitted to <strong>DRDO
+                            and ICMR</strong>. Contributed to budget planning and experimental design grant on
+                        Neuro-diagnostics.</p>
+                </div>
+                <!-- Workshops -->
+                <div class="leadership-card hidden delay-200">
+                    <div class="lead-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Workshop Organization</h3>
+                    <p>Serving as <strong>Organizing Committee Member</strong> for SERB-sponsored national workshops.
+                        Facilitated hands-on training sessions for participants in EEG signal processing and machine
+                        learning pipelines.</p>
                 </div>
             </div>
         </div>
@@ -167,16 +418,17 @@
                         <h4>IIT (BHU), Varanasi</h4>
                         <ul>
                             <li>Investigating Fractal Functional Connectivity and Autistic Traits.</li>
-                            <li>Designing experiments and analyzing fMRI data.</li>
-                            <li>Developing algorithms to identify connectivity patterns.</li>
+                            <li>Designing experiments and analyzing fMRI/EEG data.</li>
+                            <li>Developing deep learning algorithms for neural connectivity patterns.</li>
+                            <li>Building EEG foundation models for cross-dataset generalization.</li>
                         </ul>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section-grey" id="education">
+    <section class="section-light" id="education">
         <div class="container">
             <h2 class="section-title text-center hidden">Education Journey</h2>
             <div class="edu-card hidden">
@@ -202,13 +454,17 @@
                 <p><i class="fas fa-envelope"></i> chetanrakshe25@gmail.com</p>
             </div>
             <div class="footer-socials">
-                <a href="https://linkedin.com/in/chetan-rakshe-019015191" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/chetan-rakshe-019015191" target="_blank"
+                    aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/chetanrakshe2510" target="_blank" aria-label="Github Profile"><i
+                        class="fab fa-github"></i></a>
             </div>
             <p class="copyright">© 2025 Chetan Rakshe. Built with Code.</p>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
+
 </html>
