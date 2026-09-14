@@ -279,7 +279,13 @@ document.addEventListener('DOMContentLoaded', () => {
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['Biomedical Time-Series & EEG', 'Deep Learning & SSL', 'Signal Processing & QC', 'Classical ML & Modeling', 'Experimental Design & Setup'],
+                labels: [
+                    ['Biomedical Time-Series', '& EEG'],
+                    ['Deep Learning', '& SSL'],
+                    ['Signal Processing', '& QC'],
+                    ['Classical ML', '& Modeling'],
+                    ['Experimental Design', '& Setup']
+                ],
                 datasets: [{
                     label: 'Technical Proficiency',
                     data: [95, 92, 95, 90, 88],
@@ -295,6 +301,14 @@ document.addEventListener('DOMContentLoaded', () => {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        top: 25,
+                        bottom: 25,
+                        left: 45,
+                        right: 45
+                    }
+                },
                 elements: {
                     line: {
                         borderWidth: 2
@@ -310,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         pointLabels: {
                             font: {
-                                size: 12,
+                                size: 11,
                                 family: "'Space Grotesk', sans-serif"
                             },
                             color: '#CCD6F6'
