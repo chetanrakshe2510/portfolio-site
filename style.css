@@ -1102,6 +1102,170 @@ section {
 }
 
 /* =========================================
+   SELECTED PROJECTS & HONOURS
+   ========================================= */
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    border-top: 3px solid var(--accent-purple);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(2, 12, 27, 0.7);
+    border-color: var(--accent-cyan);
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.project-icon {
+    font-size: 1.8rem;
+    color: var(--accent-cyan);
+}
+
+.project-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.project-badge.badge-award {
+    background: rgba(255, 193, 7, 0.15);
+    color: #ffc107;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.project-card h3 {
+    font-family: var(--font-header);
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Honours Grid */
+.honours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.honour-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid var(--card-border);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.honour-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 12px 30px rgba(2, 12, 27, 0.7);
+}
+
+.honour-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.honour-icon {
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+}
+
+.honour-title {
+    font-family: var(--font-header);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.honour-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-purple);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.honour-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Grade Badge */
+.grade-badge {
+    display: inline-block;
+    background: rgba(189, 52, 254, 0.15);
+    color: var(--accent-purple);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 10px;
+    border: 1px solid rgba(189, 52, 254, 0.3);
+}
+
+/* Contact Item */
+.contact-item {
+    margin-bottom: 10px;
+}
+
+.contact-link {
+    color: var(--text-slate);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--accent-cyan);
+}
+
+
+/* =========================================
    9. MOBILE RESPONSIVENESS
    ========================================= */
 @media (width <=900px) {

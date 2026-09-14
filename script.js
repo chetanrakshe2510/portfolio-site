@@ -279,17 +279,17 @@ document.addEventListener('DOMContentLoaded', () => {
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['Deep Learning', 'Signal Processing', 'Exp. Design', 'Statistical Analysis', 'Software Eng.'],
+                labels: ['Biomedical Time-Series & EEG', 'Deep Learning & SSL', 'Signal Processing & QC', 'Classical ML & Modeling', 'Experimental Design & Setup'],
                 datasets: [{
                     label: 'Technical Proficiency',
-                    data: [90, 95, 85, 80, 75],
+                    data: [95, 92, 95, 90, 88],
                     fill: true,
-                    backgroundColor: 'rgba(0, 188, 212, 0.2)', // Cyan transparent
-                    borderColor: '#006064', // Deep Teal
-                    pointBackgroundColor: '#006064',
-                    pointBorderColor: '#fff',
+                    backgroundColor: 'rgba(100, 255, 218, 0.2)', // Cyan transparent
+                    borderColor: '#64FFDA', // Electric Cyan
+                    pointBackgroundColor: '#64FFDA',
+                    pointBorderColor: '#0A192F',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: '#006064'
+                    pointHoverBorderColor: '#64FFDA'
                 }]
             },
             options: {
@@ -297,27 +297,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 maintainAspectRatio: false,
                 elements: {
                     line: {
-                        borderWidth: 3
+                        borderWidth: 2
                     }
                 },
                 scales: {
                     r: {
                         angleLines: {
-                            color: 'rgba(0, 0, 0, 0.1)'
+                            color: 'rgba(100, 255, 218, 0.15)'
                         },
                         grid: {
-                            color: 'rgba(0, 0, 0, 0.05)'
+                            color: 'rgba(100, 255, 218, 0.1)'
                         },
                         pointLabels: {
                             font: {
-                                size: 14,
-                                family: "'Playfair Display', serif"
+                                size: 12,
+                                family: "'Space Grotesk', sans-serif"
                             },
-                            color: '#0A192F'
+                            color: '#CCD6F6'
                         },
                         suggestedMin: 0,
                         suggestedMax: 100,
                         ticks: {
+                            display: false,
                             stepSize: 20
                         }
                     }
