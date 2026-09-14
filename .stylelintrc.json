@@ -1,0 +1,17 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "font-family-no-missing-generic-family-keyword": null,
+        "no-descending-specificity": null,
+        "selector-class-pattern": null,
+        "color-function-notation": "legacy",
+        "color-function-alias-notation": null,
+        "alpha-value-notation": "number",
+        "property-no-vendor-prefix": null,
+        "keyframes-name-pattern": null,
+        "comment-empty-line-before": null,
+        "declaration-block-no-redundant-longhand-properties": null,
+        "media-feature-range-notation": null,
+        "no-duplicate-selectors": null
+    }
+}
